@@ -49,10 +49,10 @@ class LL:
 		new_node.next = self.head
 		self.head = new_node
 
-	# Enters at a given position
-	def addAtPosition(self, prevNode, data):
+	# Enters after a given data
+	def insertAtData(self, prevNode, data):
 		
-		new_node = Node(data)		
+		new_node = Node(data)	
 		temp = self.head
 
 		while (temp.data != prevNode):
@@ -63,7 +63,76 @@ class LL:
 				return
 
 		new_node.next = temp.next
-		temp.next = new_node	
+		temp.next = new_node
+
+	# Enters at a given index
+	def insertAtPosition(self, data, index):
+
+		new_node = Node(data)
+
+		if index<0 or index>=self.length_check():
+			print('Enter a valid index.')
+			return
+		
+		if index == 0:
+			self.append(data)
+			return
+
+		count = 0
+		temp = self.head
+
+		while temp:
+			if count == index - 1:
+				new_node.next = temp.next
+				temp.next = new_node
+
+			temp = temp.next
+			count+=1
+
+	# Remove after a given data
+
+	def removeAtData(self, data):
+		
+		if self.head and self.head.data == data:
+			self.head = self.head.next
+			return
+
+		temp = self.head
+
+		prev = None
+
+		while temp and temp.data != data:
+			prev = temp
+			temp = temp.next
+
+			if temp is None:
+				print('The element is not in the list.')
+				return
+
+		prev.next = temp.next
+			
+
+	# Remove at a given index
+	def removeAtIndex(self, index):
+
+		if index<0 and index>=self.length_check():
+			print('Enter a valid index.')
+
+		if index == 0:
+			self.head = self.head.next
+			return
+		
+		count = 0
+		temp = self.head
+
+		while temp:
+			if count == index-1:
+				temp.next = temp.next.next
+				break
+		
+			temp = temp.next
+			count += 1
+
 
 llist = LL()
 llist.append('A')
@@ -71,6 +140,8 @@ llist.append('B')
 llist.append('C')
 llist.append('D')
 # llist.prepend('E')
-llist.addAtPosition('C', 'E')
+llist.insertAtData('C', 'E')
+# llist.removeAtIndex(2)
+llist.removeAtData('E')
 # llist.length_check()
 llist.printLL()
