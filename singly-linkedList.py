@@ -65,6 +65,12 @@ class LL:
 		new_node.next = temp.next
 		temp.next = new_node
 
+	# Appends group of values to a linked list
+	def insertValues(self, data_list):
+		
+		for data in data_list:
+			self.append(data)
+
 	# Enters at a given index
 	def insertAtPosition(self, data, index):
 
@@ -90,7 +96,6 @@ class LL:
 			count+=1
 
 	# Remove after a given data
-
 	def removeAtData(self, data):
 		
 		if self.head and self.head.data == data:
@@ -110,8 +115,7 @@ class LL:
 				return
 
 		prev.next = temp.next
-			
-
+	
 	# Remove at a given index
 	def removeAtIndex(self, index):
 
@@ -133,6 +137,21 @@ class LL:
 			temp = temp.next
 			count += 1
 
+	# Reverse the linked list
+	def reverseLL(self):
+
+		curr = self.head
+		prev = None
+
+		while curr:
+
+			temp = curr.next
+			curr.next = prev
+			prev = curr
+			curr = temp
+
+		self.head = prev
+			
 
 llist = LL()
 llist.append('A')
@@ -140,8 +159,10 @@ llist.append('B')
 llist.append('C')
 llist.append('D')
 # llist.prepend('E')
-llist.insertAtData('C', 'E')
+# llist.insertAtData('C', 'E')
 # llist.removeAtIndex(2)
-llist.removeAtData('E')
+# llist.removeAtData('E')
+# llist.insertValues(['F', 'G'])
 # llist.length_check()
+# llist.reverseLL()
 llist.printLL()
