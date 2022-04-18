@@ -151,13 +151,31 @@ class LL:
 			curr = temp
 
 		self.head = prev
-			
+
+	# Remove duplicate data			
+	def removeDuplicates(self):
+
+		d = {} 
+		temp = self.head
+		prev = None
+
+		while temp:
+			if temp.data in d:
+				prev.next = temp.next
+
+			else:
+				d[temp.data] = 1
+				prev = temp
+
+			temp = prev.next
 
 llist = LL()
 llist.append('A')
+llist.append('A')
+llist.append('B')
+llist.append('B')
 llist.append('B')
 llist.append('C')
-llist.append('D')
 # llist.prepend('E')
 # llist.insertAtData('C', 'E')
 # llist.removeAtIndex(2)
@@ -165,4 +183,5 @@ llist.append('D')
 # llist.insertValues(['F', 'G'])
 # llist.length_check()
 # llist.reverseLL()
+llist.removeDuplicates()
 llist.printLL()
