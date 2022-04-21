@@ -74,15 +74,16 @@ class Stack:
             return
         
 
+if __name__ == '__main__':
 
-stack = Stack() 
+    stack = Stack() 
 
-stack.size()
-stack.isEmpty()
-stack.push(1)
-stack.push(2)
-stack.peek()
-stack.printStack()
+    stack.size()
+    stack.isEmpty()
+    stack.push(1)
+    stack.push(2)
+    stack.peek()
+    stack.printStack()
 
         
 
