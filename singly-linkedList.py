@@ -26,7 +26,7 @@ class LL:
 	def printLL(self):
 		temp = self.head
 		while temp:
-			print(temp.data, end='\n')
+			print(temp.data, "->", end=' ')
 			temp = temp.next
 	
 	# Enters at the end
