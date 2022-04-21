@@ -185,5 +185,5 @@ if __name__ == '__main__':
 	# llist.insertValues(['F', 'G'])
 	# llist.length_check()
 	# llist.reverseLL()
-	llist.removeDuplicates()
+	# llist.removeDuplicates()
 	llist.printLL()
