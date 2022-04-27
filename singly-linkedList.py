@@ -159,7 +159,7 @@ class LL:
 		temp = self.head
 		prev = None
 
-		while temp:
+		while temp.next:
 			if temp.data in d:
 				prev.next = temp.next
 
@@ -168,6 +168,22 @@ class LL:
 				prev = temp
 
 			temp = prev.next
+
+	# Move tail to head
+
+	def tailToHead(self):
+
+		temp = self.head
+		prev = None
+		
+		while temp.next:
+			prev = temp
+			temp = temp.next
+
+		prev.next = None
+		temp.next = self.head
+		self.head = temp
+
 
 if __name__ == '__main__':
 
@@ -178,12 +194,14 @@ if __name__ == '__main__':
 	llist.append('B')
 	llist.append('C')
 	llist.append('D')
+	llist.append('E')
 	# llist.prepend('E')
 	# llist.insertAtData('C', 'E')
 	# llist.removeAtIndex(2)
-	# llist.removeAtData('E')
+	llist.removeAtData('D')
 	# llist.insertValues(['F', 'G'])
 	# llist.length_check()
 	# llist.reverseLL()
 	# llist.removeDuplicates()
+	# llist.tailToHead()
 	llist.printLL()

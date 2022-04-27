@@ -14,6 +14,7 @@ This repo contains some DSA implementations I practice during my free time.
 - Sort the Linked List - [X]
 - Node swap [X]
 - nth node from the last - [X]
+- Last node to First - [:heavy_check_mark:]
 
 ## Stack (Linked List Implementation)
 
