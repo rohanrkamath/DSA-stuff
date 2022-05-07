@@ -8,19 +8,19 @@ class LL:
 		self.head = None
 
 	# Node count
-	def length_check(self):
-		temp = self.head
-		counter = 0
+	# def length_check(self):
+	# 	temp = self.head
+	# 	counter = 0
 
-		if temp is None:
-			print('The Linked List is empty')
-			return
+	# 	if temp is None:
+	# 		print('The Linked List is empty')
+	# 		return
 		
-		while temp:
-			counter += 1
-			temp = temp.next
+	# 	while temp:
+	# 		counter += 1
+	# 		temp = temp.next
 		
-		print(counter)
+	# 	print(counter)
 
 	# Prints content of the list
 	def printLL(self):
