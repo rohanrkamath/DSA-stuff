@@ -8,8 +8,8 @@ class BST:
     def __init__(self):
         self.root = None
 
-    # Find maxNode
-    def maxNode(self):
+    # Find minNode
+    def minNode(self):
         if self.root is None:
             print("The tree is empty")
             return
@@ -18,10 +18,11 @@ class BST:
         while curr.left:
             curr = curr.left
 
-        return curr.data
+        print(f'The smallest value in the current tree is: {curr.data} ')
+        return
     
-    # Find MinNode
-    def minNode(self):
+    # Find MaxNode
+    def maxNode(self):
         if self.root is None:
             print("The tree is empty")
             return
@@ -30,10 +31,10 @@ class BST:
         while curr.right:
             curr = curr.right
 
-        return curr.data
+        print(f'The largest value in the current tree is: {curr.data} ')
+        return
 
     # Add a node
-    
     def addNode(self, data, curr_node):
         new_node = Node(data)
 
@@ -88,6 +89,7 @@ class BST:
                 self.postOrder(curr_node.right)
             print(str(curr_node.data), end = '-')
 
+    # Helper function to print the traversal provided
     def printTree(self, name):
         if self.root is None:
             print('The tree is empty.')
@@ -112,6 +114,8 @@ if __name__ == '__main__':
     tree.insert(7)
     tree.insert(15)
     tree.insert(13)
+
+    tree.minNode()
 
     ''' The tree created - 
                     10

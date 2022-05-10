@@ -20,3 +20,14 @@
     - Preorder (root->left->right)
     - Inorder (left->root->right)
     - Postorder (left->right>root)
+
+## Functions - 
+
+- Max value in the tree
+- Min value in the tree
+- Traverals (recursive)
+    - Preorder
+    - Inorder
+    - Postorder
+- Add node to the tree
+- Delete node from the tree
