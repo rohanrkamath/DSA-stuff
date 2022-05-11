@@ -23,11 +23,15 @@
 
 ## Functions - 
 
-- Max value in the tree
-- Min value in the tree
-- Traverals (recursive)
+- Max value in the tree - [:heavy_check_mark:]
+- Min value in the tree - [:heavy_check_mark:]
+- Traverals (recursive) - [:heavy_check_mark:]
     - Preorder
     - Inorder
     - Postorder
-- Add node to the tree
-- Delete node from the tree
+- Add node to the tree - [:heavy_check_mark:]
+- Delete node from the tree - [X]
+- Count - [X]
+- Height - [X]
+- Width - [X]
+- Invert tree - [X]

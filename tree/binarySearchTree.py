@@ -1,3 +1,6 @@
+from stat import FILE_ATTRIBUTE_SPARSE_FILE
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -59,6 +62,9 @@ class BST:
             self.root = Node(data)
         else:
             self.addNode(data, self.root)
+
+    def removeNode(self, data):
+        return
         
     
     # Print Traversals - InOrder, PostOrder, PreOrder
@@ -103,6 +109,38 @@ class BST:
         elif name == 'postorder':
             self.postOrder(temp_node)
 
+    # def find(self, data):
+    #     if self.root:
+    #         is_found = self._find(data, self.root)
+    #         if is_found:
+    #             return True
+    #         return False
+    #     else:
+    #         return False
+
+    # def _find(self, data, curr_node):
+    #     if data > curr_node.data and curr_node.right:
+    #         return self._find(data, curr_node.right)
+    #     elif data < curr_node.data and curr_node.left:
+    #         return self._find(data, curr_node.left)
+    #     if data == curr_node.data:
+    #         return True
+
+    def find(self, data):
+        return self._find(data, self.root)
+ 
+    def _find(self, data, curr_node):
+        if curr_node:
+            if data > curr_node.data and curr_node.right:
+                return self._find(data, curr_node.right)
+            elif data < curr_node.data and curr_node.left:
+                return self._find(data, curr_node.left)
+            if data == curr_node.data:
+                return True
+            else:
+                return False
+        return None
+
 if __name__ == '__main__':
     tree = BST()
     tree.insert(10)
@@ -116,6 +154,7 @@ if __name__ == '__main__':
     tree.insert(13)
 
     tree.minNode()
+    print(tree.find(4))
 
     ''' The tree created - 
                     10
