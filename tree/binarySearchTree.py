@@ -109,23 +109,6 @@ class BST:
         elif name == 'postorder':
             self.postOrder(temp_node)
 
-    # def find(self, data):
-    #     if self.root:
-    #         is_found = self._find(data, self.root)
-    #         if is_found:
-    #             return True
-    #         return False
-    #     else:
-    #         return False
-
-    # def _find(self, data, curr_node):
-    #     if data > curr_node.data and curr_node.right:
-    #         return self._find(data, curr_node.right)
-    #     elif data < curr_node.data and curr_node.left:
-    #         return self._find(data, curr_node.left)
-    #     if data == curr_node.data:
-    #         return True
-
     def find(self, data):
         return self._find(data, self.root)
  
@@ -140,6 +123,7 @@ class BST:
             else:
                 return False
         return None
+                
 
 if __name__ == '__main__':
     tree = BST()
@@ -154,7 +138,9 @@ if __name__ == '__main__':
     tree.insert(13)
 
     tree.minNode()
-    print(tree.find(4))
+    print(tree.find(10))
+    print(tree.height())
+
 
     ''' The tree created - 
                     10
